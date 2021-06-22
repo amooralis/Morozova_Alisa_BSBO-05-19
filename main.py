@@ -6,7 +6,7 @@ from telebot import types
 bot = telebot.TeleBot("1898808473:AAEs8kO-pm_mhC4d0aEr2j_T9p_MIfGr5uQ")
 
 markup2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
-item1 = types.KeyboardButton(" Подбросить монетку")
+item1 = types.KeyboardButton("Подбросить монетку")
 item2 = types.KeyboardButton("🎲 Бросить кость")
 item3 = types.KeyboardButton("👍 Да / Нет 👎")
 markup2.row(item1)
@@ -80,7 +80,7 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=None)
 def lalala(message):
-    if message.text == '🪙 Подбросить монетку' or message.text == 'М' or \
+    if message.text == 'Подбросить монетку' or message.text == 'М' or \
             message.text == 'м' or message.text == 'M':
         m = random.randint(0, 2)
         if m == 0:
@@ -96,7 +96,7 @@ def lalala(message):
             message.text == 'к' or message.text == 'К':
         bot.send_message(message.chat.id, 'Бросаем:', reply_markup=markupi)
 
-    elif message.text == 'Да / Нет' or \
+    elif message.text == '👍 Да / Нет 👎' or \
             message.text == 'Н' or message.text == 'н' or \
             message.text == 'H' or message.text == 'Д' or message.text == 'д':
         m = random.randint(0, 2)
